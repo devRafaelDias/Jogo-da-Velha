@@ -1,0 +1,28 @@
+body {
+  margin: 0;
+}
+
+h1 {
+  font-size: 10vh;
+  margin: 5vh;
+  padding: 0;
+  text-align: center;
+}
+
+table {
+  border-collapse: collapse;
+  margin: 0 auto;
+}
+
+td {
+  width: min(25vw, 22vh);
+  height: min(25vw, 22vh);
+  border: 1px solid;
+  text-align: center;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+td:hover {
+  background-color: lightgray;
+}
