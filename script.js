@@ -18,7 +18,6 @@ jogO.innerHTML = `Jogador O: ${contO}`;
 // 6 7 8
 
 mostradorJogador.innerHTML = jogadorAtual;
-
 // Liga todas as células na função jogar
 for (const casa of casas) {
   casa.onclick = jogar;
@@ -31,7 +30,8 @@ function jogar() {
   // Coloca o conteúdo na célula atual
   document.onkeyup = false;
   this.textContent = jogadorAtual;
-
+  if(refresh) 
+    cabecalho.innerHTML = `Jogando: ${jogadorAtual}`;
   trocaTurno();
   trocaJogador();
   mostradorJogador.innerHTML = jogadorAtual;
@@ -93,8 +93,8 @@ function verificaVelha() {
 }
 function refresh() {
   for(i of casas) {
-    i.textContent = ''
-    i.onclick = jogar
+    i.textContent = '';
+    i.onclick = jogar;
 }
-  reinicar.style.display = 'none'
+  reinicar.style.display = 'none';
 }
