@@ -17,11 +17,12 @@ jogO.innerHTML = `Jogador O: ${contO}`;
 // 3 4 5
 // 6 7 8
 
-mostradorJogador.innerHTML = jogadorAtual;
 // Liga todas as células na função jogar
 for (const casa of casas) {
   casa.onclick = jogar;
 }
+
+refresh();
 
 function jogar() {  
   // TODO: verificar se o quadro já não está preenchido!
@@ -30,8 +31,6 @@ function jogar() {
   // Coloca o conteúdo na célula atual
   document.onkeyup = false;
   this.textContent = jogadorAtual;
-  if(refresh) 
-    cabecalho.innerHTML = `Jogando: ${jogadorAtual}`;
   trocaTurno();
   trocaJogador();
   mostradorJogador.innerHTML = jogadorAtual;
@@ -95,6 +94,9 @@ function refresh() {
   for(i of casas) {
     i.textContent = '';
     i.onclick = jogar;
+    cabecalho.innerHTML = 'Jogando: <span id="jogador"></span>'
+    mostradorJogador = document.getElementById('jogador');
+    mostradorJogador.innerHTML = jogadorAtual;
 }
   reinicar.style.display = 'none';
 }
